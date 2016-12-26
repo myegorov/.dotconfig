@@ -1,0 +1,11 @@
+[user]
+	name = Maksim Yegorov
+	email = findmaksim@gmail.com
+[color]
+	ui = auto
+[credential]
+	helper = cache
+[core]
+	editor = vim
+[push]
+	default = simple

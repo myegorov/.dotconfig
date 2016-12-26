@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/max/classes/605/hw12/lab12-3'
+let g:netrw_dirhist_2='/home/max/learndir/learn_django/mysite/blog/migrations'
+let g:netrw_dirhist_3='/home/max/classes/16_spring/compiler/archive/hw1'
+let g:netrw_dirhist_4='/home/max/src/pandoc-thesis-template-master/source/figures'
+let g:netrw_dirhist_5='/home/max/classes/16_spring/algorithms/project/pylib/logs'
+let g:netrw_dirhist_6='/home/max/.virtualenvs/py3.5/lib/python3.5/site-packages/psutil-4.1.0.dist-info'
+let g:netrw_dirhist_7='/home/max/classes/16_spring/compiler/git/project3/langfc-src/type-checker'
+let g:netrw_dirhist_8='/home/max/classes/16_spring/compiler/git/project5/langfc-src/vm-codegen'
+let g:netrw_dirhist_9='/home/max/classes/16_spring/graphics/labs/final'
