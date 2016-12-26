@@ -135,7 +135,7 @@ filetype plugin indent on
 "execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " ocaml ocp-indent source code indenter
-"set rtp^="/home/max/.opam/4.02.3/share/ocp-indent/vim
+"set rtp^="$HOME/.opam/4.02.3/share/ocp-indent/vim
 "autocmd FileType ocaml source substitute(system('opam config var share'), '\n$', '', '''') . "/typerex/ocp-indent/ocp-indent.vim"
 
 
