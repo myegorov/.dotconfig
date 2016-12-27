@@ -114,8 +114,8 @@ if ! shopt -oq posix; then
 fi
 
 # enable virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 
 # use vi key bindings on command line
@@ -139,6 +139,7 @@ export MANPATH=/usr/local/texlive/2015/texmf-dist/doc/man:$MANPATH
 export TEXMFHOME=$HOME/texmf
 
 # OCaml configuration for OPAM
-. $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-eval `opam config env`
+# . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# eval `opam config env`
 alias dotconfig='/usr/bin/git --git-dir=$HOME/.dotconfig/ --work-tree=$HOME'
+alias termite='termite -e /usr/bin/zsh'

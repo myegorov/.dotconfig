@@ -27,4 +27,5 @@ git clone --separate-git-dir=$HOME/.dotconfig https://github.com/myegorov/.dotco
 rsync -rv --exclude '.git' $HOME/.dotconfig.tmp/ $HOME/
 rm -rf $HOME/.dotconfig.tmp
 source $HOME/.zshrc
+dotconfig config --local status.showUntrackedFiles no
 ```

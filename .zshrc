@@ -106,16 +106,19 @@ alias langfc="$HOME/classes/16_spring/compiler/git/project5/bin/langfc -Ckeep-co
 alias dotconfig='/usr/bin/git --git-dir=$HOME/.dotconfig/ --work-tree=$HOME'
 
 # Virtualenv wrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # force Python not to save *.pyc in __pycache__
 # by setting PYTHONDONTWRITEBYTECODE to any value
 export PYTHONDONTWRITEBYTECODE=true
 
 # OCaml configuration for OPAM
-. $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-eval `opam config env`
+# . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# eval `opam config env`
 
 # Racket
 alias racket='/Applications/Racket\ v6.7/bin/racket -i -p neil/sicp -l xrepl'
+
+export SHELL=/usr/bin/zsh
+alias termite='termite -e /usr/bin/zsh'

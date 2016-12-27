@@ -152,6 +152,9 @@ let g:tslime_ensure_trailing_newlines=2
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
+" map jj to ESC
+inoremap jj <ESC>
+
 
 " copy to buffer
 vmap <C-c> :w !pbcopy<CR>
