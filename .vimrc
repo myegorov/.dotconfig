@@ -1,8 +1,14 @@
 set nocompatible
+filetype off
 
 " Turn word wrap off
 set nowrap
 "set wrap
+
+" Enable folding with the spacebar
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
 
 " No backup files
 set nobackup
@@ -45,14 +51,13 @@ set tabstop=4 shiftwidth=4 expandtab
 set softtabstop=4    " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround      " round indent to multiple of 'shiftwidth'
 set autoindent      " align the new line indent with the previous line
+set fileformat=unix
 
 " change tabsize depending on file type
 autocmd FileType sml setlocal shiftwidth=3 tabstop=3 softtabstop=3
 autocmd FileType ocaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType c setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript,html,xml,css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd filetype lisp,scheme,art setlocal equalprg=scmindent.rkt
@@ -62,7 +67,6 @@ autocmd filetype lisp,scheme,art setlocal equalprg=scmindent.rkt
 "let g:indentLine_color_dark = 1
 " disable indentLine
 let g:indentLine_enabled = 0
-
 
 " Highlight trailing whitespace
 set list listchars=tab:\ \ ,trail:·
@@ -105,7 +109,10 @@ filetype indent on
 source ~/.vim/matchit.vim
 
 if has("gui_running")
+    set background=dark
 	colors darkblue
+else
+    colors zenburn
 endif
 
 
@@ -126,9 +133,52 @@ set wrapmargin=0
 " Echo keystrokes on status line
 set showcmd
 
-" Plugin management via pathogen.vim
-execute pathogen#infect()
+" Plugin management via Vundle: set the runtime path and initialize
+" (re)install all plugins from within vim with
+" :PluginInstall
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+
+Plugin 'tmhedberg/SimpylFold'
+let g:SimpylFold_docstring_preview=1
+
+Plugin 'sjl/tslime.vim'
+let g:tslime_ensure_trailing_newlines=2
+
+" syntax completion
+Plugin 'Valloric/YouCompleteMe'
+let g:ycm_autoclose_preview_window_after_completion=1
+map <Leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" check syntax on each save
+Plugin 'scrooloose/syntastic'
+
+" Zenburn color scheme
+Plugin 'jnurmine/Zenburn'
+
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'tpope/vim-repeat'
+Plugin 'Yggdroot/indentLine'
+Plugin 'tpope/vim-commentary'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore .pyc files in NERDTree
+
+Plugin 'losingkeys/vim-niji'
+
+" all vim plugins must be added before the following line
+call vundle#end()
 filetype plugin indent on
+
 
 " merlin setup
 "let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
@@ -137,14 +187,6 @@ filetype plugin indent on
 " ocaml ocp-indent source code indenter
 "set rtp^="$HOME/.opam/4.02.3/share/ocp-indent/vim
 "autocmd FileType ocaml source substitute(system('opam config var share'), '\n$', '', '''') . "/typerex/ocp-indent/ocp-indent.vim"
-
-
-" ctrlp plugin
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-" tslime plugin
-set runtimepath^=~/.vim/bundle/tslime.vim
-let g:tslime_ensure_trailing_newlines=2
 
 
 " Keybindings
@@ -162,3 +204,13 @@ vmap <C-c> :w !pbcopy<CR>
 "nmap <C-c> :.w! ~/.vimbuffer<CR>
 " paste from buffer
 map <C-p> :r ~/.vimbuffer<CR>
+
+" split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" execute Python via:
+" \\
+nnoremap <Leader><Leader> :exec '!python' shellescape(@%, 1)<CR>
