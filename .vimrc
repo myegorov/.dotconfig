@@ -19,7 +19,7 @@ set noswapfile
 " doesn't work without clipboard support
 " see if vim comes with clipboard support:
 " $ vim --version | grep clipboard
-set clipboard=unnamed
+set clipboard^=unnamed
 
 " Command history
 set history=100

@@ -102,6 +102,11 @@ alias ptpython="ptipython --vi"
 #alias js="js24"
 alias langfc="$HOME/classes/16_spring/compiler/git/project5/bin/langfc -Ckeep-convert-to-reploc=true -Ckeep-vm-codegen=true"
 alias now='date +"%T"'
+alias vi='vim'
+alias scala='sbt console'
+alias haskell='ghci'
+alias prolog='swipl'
+alias matlab="$HOME/opt/MATLAB/R2016b/bin/matlab -nosplash"
 
 # keep track of dotfiles
 alias dotconfig='/usr/bin/git --git-dir=$HOME/.dotconfig/ --work-tree=$HOME'
