@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 1223f812e43a4582006288bcbf242ee0744fc12c max <max@tp.localdomain> 1482831903 -0800	clone: from https://github.com/myegorov/.dotconfig.git
+1223f812e43a4582006288bcbf242ee0744fc12c f8380d0aedc3ad19a4382f4c770bba5b08e6e729 Maksim Yegorov <findmaksim@gmail.com> 1482837104 -0800	commit: arch clone
+f8380d0aedc3ad19a4382f4c770bba5b08e6e729 9fdd56d356093390570d65111c26be2f3c069c42 Maksim Yegorov <findmaksim@gmail.com> 1482911019 -0800	commit: plugins
+9fdd56d356093390570d65111c26be2f3c069c42 14c57287af5ee1711b38feda1c724b17188420b1 Maksim Yegorov <findmaksim@gmail.com> 1484469732 -0800	commit: add virtualenv support
+14c57287af5ee1711b38feda1c724b17188420b1 434add3aa0664f40a4ff3d2d8b9145b33752b994 Maksim Yegorov <findmaksim@gmail.com> 1484890238 -0800	commit: pathogen -> vundle
+434add3aa0664f40a4ff3d2d8b9145b33752b994 8b2769cc01af96602f158dc3b3a94b136917fc9c Maksim Yegorov <findmaksim@gmail.com> 1485451061 -0500	commit: alias
+8b2769cc01af96602f158dc3b3a94b136917fc9c fa243645e6ee049ff54b9eb49d646acc221421e2 Maksim Yegorov <findmaksim@gmail.com> 1486261617 -0500	commit: config
