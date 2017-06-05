@@ -19,7 +19,7 @@ set noswapfile
 " doesn't work without clipboard support
 " see if vim comes with clipboard support:
 " $ vim --version | grep clipboard
-set clipboard^=unnamed
+set clipboard^=unnamedplus
 
 " Command history
 set history=100
@@ -156,6 +156,11 @@ map <Leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " check syntax on each save
 Plugin 'scrooloose/syntastic'
 
+" syntax highlighting for JS & JSX (React)
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
+
 " Zenburn color scheme
 Plugin 'jnurmine/Zenburn'
 
@@ -199,11 +204,11 @@ inoremap jj <ESC>
 
 
 " copy to buffer
-vmap <C-c> :w !pbcopy<CR>
-"vmap <C-c> :w! ~/.vimbuffer<CR>
-"nmap <C-c> :.w! ~/.vimbuffer<CR>
+" vmap <C-c> :w !pbcopy<CR>
+vmap <C-c> :w !xsel --clipboard --input<CR>
 " paste from buffer
-map <C-p> :r ~/.vimbuffer<CR>
+" map <C-p> :r ~/.vimbuffer<CR>
+map <C-p> :r !xsel -o -b<CR>
 
 " split navigation
 nnoremap <C-J> <C-W><C-J>

@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ptpython="ptipython --vi"
+alias venv="source ./bin/activate" # activate local venv created with python -m myenv
 #alias js="js24"
 alias langfc="$HOME/classes/16_spring/compiler/git/project5/bin/langfc -Ckeep-convert-to-reploc=true -Ckeep-vm-codegen=true"
 alias now='date +"%T"'
@@ -106,15 +107,22 @@ alias vi='vim'
 alias scala='sbt console'
 alias haskell='ghci'
 alias prolog='swipl'
-alias matlab="$HOME/opt/MATLAB/R2016b/bin/matlab -nosplash"
+alias open='xdg-open'
+
+# system clipboard
+# simulate OSX's pbcopy and pbpaste on other platforms
+if [ ! $(uname -s) = "Darwin" ]; then
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+fi
 
 # keep track of dotfiles
 alias dotconfig='/usr/bin/git --git-dir=$HOME/.dotconfig/ --work-tree=$HOME'
 
-# Virtualenv wrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/projects
-source /usr/bin/virtualenvwrapper.sh
+# # Virtualenv wrapper
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/projects
+# source /usr/bin/virtualenvwrapper.sh
 
 # force Python not to save *.pyc in __pycache__
 # by setting PYTHONDONTWRITEBYTECODE to any value
@@ -133,3 +141,20 @@ alias termite='termite -e /usr/bin/zsh'
 # nvm
 export NVM_DIR="/home/max/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# pyenv settings for managing Python versions
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+source ~/.pyenv/completions/pyenv.zsh
+eval "$(pyenv virtualenv-init -)"
+
+## can create virtualenv with:
+# pyenv virtualenv 3.6.0 my-virtual-env
+## list existing virtualenvs with:
+# pyenv virtualenvs
+## use a virtualenv:
+# pyenv activate my-virtual-env
+# pyenv deactivate my-virtual-env
+## delete a virtualenv
+# pyenv uninstall my-virtual-env
