@@ -64,6 +64,7 @@ plugins=(git)
 export PATH="$HOME/bin:$HOME/scripts:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
 export PATH=${HOME}/.cabal/bin:${PATH}
 export PATH=$PATH:/opt/Qt/Tools/QtCreator/bin:/opt/Qt/5.5/gcc_64/bin
+export PATH=/opt/sml/bin:$PATH
 export PATH=/usr/local/texlive/2015/bin/x86_64-linux:$PATH
 export INFOPATH=/usr/local/texlive/2015/texmf-dist/doc/info:$INFOPATH
 export MANPATH=/usr/local/texlive/2015/texmf-dist/doc/man:$MANPATH
@@ -107,6 +108,7 @@ alias vi='vim'
 alias scala='sbt console'
 alias haskell='ghci'
 alias prolog='swipl'
+alias polyml='poly'
 alias open='xdg-open'
 
 # system clipboard
@@ -131,6 +133,10 @@ export PYTHONDONTWRITEBYTECODE=true
 # OCaml configuration for OPAM
 # . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 # eval `opam config env`
+
+# SML/NJ configuration for Standard ML
+export SMLROOT=/opt/sml
+alias smlrepl='rlwrap sml'
 
 # Racket
 alias racket='/Applications/Racket\ v6.7/bin/racket -i -p neil/sicp -l xrepl'

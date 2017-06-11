@@ -160,6 +160,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
+" sml
+Plugin 'javier-lopez/sml.vim'
+
 
 " Zenburn color scheme
 Plugin 'jnurmine/Zenburn'
