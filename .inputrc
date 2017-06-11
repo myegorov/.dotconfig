@@ -1,0 +1,3 @@
+# vim keybindings for utilities executed with rlwrap
+set editing-mode vi
+set keymap vi
